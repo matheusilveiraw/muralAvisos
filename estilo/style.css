@@ -1,0 +1,12 @@
+a.icones { 
+    color: white;
+}
+
+a.icones:hover { 
+    color: lightgray;
+}
+
+#login { 
+    display: block;
+    width: 100%;
+}

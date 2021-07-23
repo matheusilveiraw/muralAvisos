@@ -2,6 +2,12 @@
 
     session_start();
 
+    $banco = fopen('bancoDadosTxt.txt', 'a'); //nesse caso, w parece uma opção tbm mas optando por a pois parece uma opção mais garantida
+
+    fclose($banco);
+
+    //abri o arquivo aqui para evitar um bug que acontecia na primeira vez que abre o mural 
+
 ?> 
 
 <!doctype html>

@@ -113,7 +113,7 @@
                     </div>        
             </div>
         </nav>
-    </header>
+  </header>
 
     <article>
         <div class="container">
@@ -133,7 +133,7 @@
 
                             <div class="form-group">
                                 <label for="destino-aviso">Destino: </label>
-                                <select multiple class="form-control" id="destino-aviso" name="destino-aviso">
+                                <select class="form-control" id="destino-aviso" name="destino-aviso">
                                 <option>Administração</option>
                                 <option>Recursos Humanos</option>
                                 <option>Desenvolvimento</option>
@@ -152,7 +152,10 @@
                     </div>
 
                     <div>
-                        aonde vão estar os avisos 
+                        <?php 
+                            //separar o código só para ficar mais fácil de ler o que estou fazendo
+                            include "mostrarAvisos.php";
+                        ?>
                     </div>
 
                 </div>

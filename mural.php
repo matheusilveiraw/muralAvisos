@@ -120,9 +120,10 @@
             <div class="row">
                 <div class="col">
 
-                    <h1 class="mt-3 mb-3 text-center">
+                    <h1 class="mt-3 text-center">
                         Mural de Avisos
                     </h1>
+                    <h5 class="text-center mb-3">Crie um aviso!</h5>
 
                     <div>
                         <form class="mt-3 mb-1 border border-primary rounded p-2" method="POST" action="valida_aviso.php">
@@ -152,6 +153,8 @@
                     </div>
 
                     <div>
+
+                        <h2 class="text-center mt-3">Avisos!</h2>
                         <?php 
                             //separar o código só para ficar mais fácil de ler o que estou fazendo
                             include "mostrarAvisos.php";

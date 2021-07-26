@@ -1,6 +1,49 @@
 <?php 
+
+
+function aviso($titulo, $destino, $conteudo, $quemEnviou) { 
+
+  ?>
+  <div class="card mb-3">
+    <div class="card-header">
+      <?= $titulo ?>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p> <?= $conteudo ?> </p>
+        <footer class="blockquote-footer"><?= $quemEnviou  ?></footer>
+      </blockquote>
+    </div>
+  </div>
+  <?php
+
+}
+
+function postarMural ($avisos=array()) { 
+  //$avisos_divididos = explode('-/-', $avisos[0]);
+
+  for($i = 0; $i < count($avisos) - 1; $i++) { 
+
+    $info_separada = explode('-/-', $avisos[$i]);
+    /*echo $info_separada[0] . '<br>'; titulo
+    echo $info_separada[1] . '<br>'; destino
+    echo $info_separada[2] . '<br>'; conteudo 
+    echo $info_separada[3] . '<br>'; quem mandou
+    echo '-------- <br>';*/
+
+    aviso($info_separada[0], $info_separada[1], $info_separada[2], $info_separada[3]);
+
+    ?>
+
+<?php
+  }
+
+  //echo 'funcionando';
+}
+
     $banco = fopen('bancoDadosTxt.txt', 'r');
     
+
     $avisos = array();
 
     while(!feof($banco)) { 
@@ -14,40 +57,17 @@
     }
 
     fclose($banco);
-  
-    function postarMural ($avisos=array()) { 
-      //$avisos_divididos = explode('-/-', $avisos[0]);
 
-      for($i = 0; $i < count($avisos) - 1; $i++) { 
+    //tratamento para o caso de não ter avisos, no caso igual a 1 pois o arquivo é criado com uma linha
+    if(count($avisos) == 1) { 
+      //vai escrever um html que diz que não nenhum aviso
 
-        $info_separada = explode('-/-', $avisos[$i]);
-        /*echo $info_separada[0] . '<br>';
-        echo $info_separada[1] . '<br>';
-        echo $info_separada[2] . '<br>';
-        echo $info_separada[3] . '<br>';
-        echo '-------- <br>';*/
+      echo '<h5 class="text-center mb-3">Não há avisos!</h5>';
 
-        ?>
-
-      <div class="card">
-        <div class="card-header">
-          <?= $info_separada[0] ?>
-        </div>
-        <div class="card-body">
-          <blockquote class="blockquote mb-0">
-            <p> <?= $info_separada[2] ?> </p>
-            <footer class="blockquote-footer"><?= $info_separada[3]  ?></footer>
-          </blockquote>
-        </div>
-      </div>
-    
-    <?php
-      }
-
-      //echo 'funcionando';
-    }
-  
+    } else { 
       postarMural($avisos);
+    }
 
+  
     ?>
 

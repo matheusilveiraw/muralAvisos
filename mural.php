@@ -2,6 +2,7 @@
 
     session_start(); 
     //echo 'Logou com acesso: ' . $_SESSION['login_acesso'] . ' e email: ' . $_SESSION['login_email'];
+    //echo $_SESSION['login_acesso'];
 
 ?> 
 
@@ -126,6 +127,14 @@
                     <h5 class="text-center mb-3">Crie um aviso!</h5>
 
                     <div>
+
+                        <?php
+
+                            if($_SESSION['login_acesso'] == 1 || $_SESSION['login_acesso'] == 2) { 
+
+                            
+                        ?>
+
                         <form class="mt-3 mb-1 border border-primary rounded p-2" method="POST" action="valida_aviso.php">
                             <div class="form-group">
                                 <label for="titulo-aviso">Título do aviso:</label>
@@ -143,11 +152,51 @@
                             </div>
                             <div class="form-group">
                                 <label for="texto-aviso">Contéudo: </label>
-                                <textarea class="form-control" id="texto-aviso" name="texto-aviso" rows="5"></textarea>
+                                <textarea class="form-control" id="texto-aviso" name="texto-aviso" rows="5" placeholder="Insira aqui o aviso!"></textarea>
                             </div>
                             <input type="submit" value="Enviar aviso" class="btn btn-primary mt-2">
                         </form>
 
+                        <?php 
+                        
+                            }
+
+                        ?>
+
+                        <?php
+
+                        if($_SESSION['login_acesso'] == 3) { 
+
+
+                        ?>
+
+                        <form class="mt-3 mb-1 border border-primary rounded p-2">
+                        <div class="form-group">
+                            <label for="titulo-aviso">Título do aviso:</label>
+                            <input type="text" class="form-control" id="titulo-aviso" name="titulo-aviso" placeholder="Insira o título do aviso aqui" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destino-aviso">Destino: </label>
+                            <select class="form-control" id="destino-aviso" name="destino-aviso" disabled>
+                            <option>Administração</option>
+                            <option>Recursos Humanos</option>
+                            <option>Desenvolvimento</option>
+                            <option>Suporte Técnico</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="texto-aviso">Contéudo: </label>
+                            <textarea class="form-control" id="texto-aviso" name="texto-aviso" rows="5" disabled placeholder="Insira aqui o aviso!"></textarea>
+                        </div>
+                        <input type="submit" value="Enviar aviso" onclick="alert('Não pode enviar devido ao nível hierárquico!')" class="btn btn-primary mt-2">
+                        </form>
+
+                        <?php 
+
+                        }
+
+                        ?>
 
 
                     </div>

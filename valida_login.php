@@ -23,7 +23,7 @@
 
         array('id' => 7, 'email' => "matheus@mural.com", 'senha' => "1234", 'acesso' => 3, 'equipe' => 2),
 
-        array('id' => 8, 'email' => "carlos@mural.com", 'senha' => "1234", 'acesso' => 3, 'equipe' => 4),
+        array('id' => 8, 'email' => "jorge@mural.com", 'senha' => "1234", 'acesso' => 3, 'equipe' => 4),
 
         array('id' => 9, 'email' => "manuela@mural.com", 'senha' => "1234", 'acesso' => 3, 'equipe' => 5)
     );
@@ -50,7 +50,7 @@
 
     murialdo@mural.com - 1234 - Suporte técnico 
     matheus@mural.com - 1234 - Desenvolvimento
-    carlos@gmail.com - 1234 - ADM 
+    jorge@gmail.com - 1234 - ADM 
     manuela@gmail.com - 1234 - RH 
     Membros ordinarios - podem apenas ler os avisos que foram enviados para a sua área
     

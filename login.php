@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="estilo/style.css">
 
 
-    <title>Mural de Avisos - Inicio</title>
+    <title>Mural de Avisos - Login</title>
   </head>
   <body>
     <header>

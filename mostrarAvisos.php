@@ -9,6 +9,29 @@
 
 function aviso($titulo, $destino, $conteudo, $quemEnviou) { 
 
+  //echo $quemEnviou;
+
+  if($quemEnviou == ' larissa@mural.com' . PHP_EOL) { 
+    $quemEnviou = 'CEO Larissa';
+  }
+
+  if($quemEnviou == ' elisangela@mural.com'  . PHP_EOL) { 
+    $quemEnviou = 'Suporte Técnico';
+  }
+
+  if($quemEnviou == ' carlos@mural.com' . PHP_EOL) { 
+    $quemEnviou = 'Administração';
+  }
+
+  if($quemEnviou == ' georgina@mural.com' . PHP_EOL) { 
+    $quemEnviou = 'Recursos Humanos';
+  }
+
+  if($quemEnviou == ' maria@mural.com' . PHP_EOL) { 
+    $quemEnviou = 'Desenvolvimento';
+  }
+
+
   ?>
   <div class="card mb-3">
     <div class="card-header">
